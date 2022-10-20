@@ -8,15 +8,15 @@
 
 ## **_Description_**
 
-In this website, you will be able to browse the inventory of the US military aircraft separated by function. This website will also have the capability to add/update/and delete these airplanes if needed.
+In this website, you will be able to browse the inventory of the US aircraft. The aircraft will be separated by genre (i.e. fighter/bomber/attack) and you will be able to click on each individual aircraft to obtain the known or hypthesized aircraft specs.
 
 ## **_How to Get Started_**
 
-Navigate through the website by clinking on the provided links.
+Navigate through the website by clinking on the provided links. Navigate to the experimental aircraft section to create your own plane!
 
 ### **_What you can expect..._**
 
-A completely immersive experience as you learn more about the latest and greatest US military aircraft!
+A completely immersive experience as you learn more about the latest and greatest US aircraft by genre!
 
 ## **_Trello Link_**
 
