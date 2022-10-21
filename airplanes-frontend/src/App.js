@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
+import Header from './components/Header'
 
 function App() {
   const [genres, updateGenres] = useState([])
@@ -14,8 +15,10 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <h1>Genres</h1>
+    <div>
+      <header>
+        <Header />
+      </header>
     </div>
   )
 }
