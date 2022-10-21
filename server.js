@@ -30,7 +30,7 @@ app.get('/genres', async (req, res) => {
 
 // create an airplane --> POST
 app.post('/airplanes', async (req, res) => {
-  let exampleGenreId = '6352acfb81fc0d82a06ae986'
+  let exampleGenreId = '6352e3a4ef2d7a275a9aa85a'
   const requestBody = { ...req.body, genre: exampleGenreId }
   let createdAirplane = await Airplane.create(requestBody)
   res.json(createdAirplane)
@@ -69,6 +69,12 @@ app.put('/genres/:id', async (req, res) => {
 // delete one Airplane --> DELETE
 app.delete('/airplanes/:id', async (req, res) => {
   let deletedAirplane = await Airplane.findByIdAndDelete(req.params.id)
+  res.json(deletedAirplane)
+})
+
+//delete many Airplanes -> DELETE
+app.delete('/airplanes/', async (req, res) => {
+  let deletedAirplane = await Airplane.deleteMany({})
   res.json(deletedAirplane)
 })
 

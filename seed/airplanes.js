@@ -25,7 +25,7 @@ const main = async () => {
       range: '3400 Miles',
       // cargo_capactiy: { type: String },
       date_deployed: '1976',
-      genre_id: fighters
+      genre: fighters
     },
     {
       model: 'F18 Hornet',
@@ -37,7 +37,7 @@ const main = async () => {
       range: '1000 Miles',
       // cargo_capactiy: { type: String },
       date_deployed: '1978',
-      genre_id: fighters
+      genre: fighters
     }
   ]
 
