@@ -58,6 +58,26 @@ app.put('/airplanes/:id', async (req, res) => {
   res.json(updatedAirplane)
 })
 
+// update one Genre --> PUT
+app.put('/genres/:id', async (req, res) => {
+  let updatedGenre = await Genre.findByIdAndUpdate(req.params.id, req.body, {
+    new: true
+  })
+  res.json(updatedGenre)
+})
+
+// delete one Airplane --> DELETE
+app.delete('/airplanes/:id', async (req, res) => {
+  let deletedAirplane = await Airplane.findByIdAndDelete(req.params.id)
+  res.json(deletedAirplane)
+})
+
+// delete one Genre --> DELETE
+app.delete('/genres/:id', async (req, res) => {
+  let deletedGenre = await Genre.findByIdAndDelete(req.params.id)
+  res.json(deletedGenre)
+})
+
 app.listen(PORT, () => {
   console.log(`Express server listening on port: ${PORT}`)
 })
