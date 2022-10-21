@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
-const genreSchema = require('./genre')
-const airplaneSchema = require('./airplane')
+const GenreSchema = require('./genre')
+const AirplaneSchema = require('./airplane')
 
-const Genre = mongoose.model('Genre', genreSchema)
-const Airplane = mongoose.model('Airplane', airplaneSchema)
+const Genre = mongoose.model('Genre', GenreSchema)
+const Airplane = mongoose.model('Airplane', AirplaneSchema)
 
 module.exports = {
   Genre,
