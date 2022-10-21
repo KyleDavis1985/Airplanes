@@ -6,7 +6,7 @@ const airplaneSchema = new Schema(
     description: { type: String, required: true },
     top_speed: { type: String, required: true },
     unit_cost: { type: String, required: true },
-    url: { type: String, required: true },
+    image: { type: String, required: true },
     contractor: { type: String },
     stealth: { type: String },
     range: { type: String },
