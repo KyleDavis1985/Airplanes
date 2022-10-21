@@ -1,7 +1,6 @@
 const db = require('../db')
 const Genre = require('../models/genre')
 
-// Connect to the database
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
@@ -42,7 +41,6 @@ const main = async () => {
         'https://stormarea51basecamp.com/wp-content/uploads/2020/12/UFO-in-the-dark-sky-1024x576.jpg'
     }
   ]
-
   await Genre.insertMany(genres)
   console.log('Created some genres!')
 }

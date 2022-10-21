@@ -1,4 +1,5 @@
 const { Schema } = require('mongoose')
+const mongoose = require('mongoose')
 
 const airplaneSchema = new Schema(
   {
@@ -18,4 +19,4 @@ const airplaneSchema = new Schema(
   { timestamps: true }
 )
 
-module.exports = airplaneSchema
+module.exports = mongoose.model('Airplane', airplaneSchema)

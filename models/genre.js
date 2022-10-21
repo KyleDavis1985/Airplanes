@@ -1,4 +1,5 @@
 const { Schema } = require('mongoose')
+const mongoose = require('mongoose')
 
 const genreSchema = new Schema(
   {
@@ -8,4 +9,4 @@ const genreSchema = new Schema(
   { timestamps: true }
 )
 
-module.exports = genreSchema
+module.exports = mongoose.model('Genre', genreSchema)
