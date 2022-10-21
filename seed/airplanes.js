@@ -1,14 +1,14 @@
 const db = require('../db')
-const Genre = require('../models/genre')
+const Airplane = require('../models/airplane')
 
 // Connect to the database
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
-  const genres = []
+  const airplanes = []
 
-  await Genre.insertMany(genres)
-  console.log('Created some genres!')
+  await Airplane.insertMany(airplanes)
+  console.log('Created some airplanes!')
 }
 const run = async () => {
   await main()
