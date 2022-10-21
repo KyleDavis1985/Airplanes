@@ -42,6 +42,22 @@ app.get('/airplanes', async (req, res) => {
   res.json(allAirplanes)
 })
 
+//get one Airplane --> GET
+app.get('/airplanes/:id', async (req, res) => {
+  let foundAirplane = await Airplane.findById(req.params.id).populate('genre')
+  res.json(foundAirplane)
+})
+
+// update one Airplane --> PUT
+app.put('/airplanes/:id', async (req, res) => {
+  let updatedAirplane = await Airplane.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true }
+  )
+  res.json(updatedAirplane)
+})
+
 app.listen(PORT, () => {
   console.log(`Express server listening on port: ${PORT}`)
 })
