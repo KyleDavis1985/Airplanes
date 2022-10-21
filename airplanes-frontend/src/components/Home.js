@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import GenreCard from './GenreCard'
 
 const Home = () => {
   const [genres, updateGenres] = useState([])
@@ -12,7 +13,16 @@ const Home = () => {
     apiCall()
   }, [])
 
-  return
+  return (
+    <div className="genres">
+      <h2>Genres</h2>
+      <section className="container-grid">
+        {genres.map((genre) => (
+          <GenreCard name={genre.name} image={genre.image} />
+        ))}
+      </section>
+    </div>
+  )
 }
 
 export default Home
