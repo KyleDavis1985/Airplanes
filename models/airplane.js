@@ -1,7 +1,7 @@
 const { Schema } = require('mongoose')
-const mongoose = require('mongoose')
+const GenreSchema = require('./genre')
 
-const airplaneSchema = new Schema(
+const AirplaneSchema = new Schema(
   {
     model: { type: String, required: true },
     description: { type: String, required: true },
@@ -19,4 +19,4 @@ const airplaneSchema = new Schema(
   { timestamps: true }
 )
 
-module.exports = mongoose.model('Airplane', airplaneSchema)
+module.exports = AirplaneSchema

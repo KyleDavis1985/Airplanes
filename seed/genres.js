@@ -1,5 +1,6 @@
 const db = require('../db')
 const Genre = require('../models/genre')
+const mongoose = require('mongoose')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
