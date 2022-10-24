@@ -12,7 +12,7 @@ const AirplaneSchema = new Schema(
     range: { type: String },
     cargo_capactiy: { type: String },
     date_deployed: { type: String },
-    genre: { type: Schema.Types.ObjectId, ref: 'GenreSchema' }
+    genre: { type: Schema.Types.ObjectId, ref: 'genres' }
   },
   { timestamps: true }
 )

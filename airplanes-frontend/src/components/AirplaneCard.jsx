@@ -1,24 +1,27 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import AirplaneList from './AirplaneList'
+import axios from 'axios'
 
 const AirplaneCard = (props) => {
   let { id } = useParams()
   const [genre, setSelectedGenre] = useState('')
-  let airplaneHit = false
+  const [airplanes, setAirplanes] = useState([])
 
   useEffect(() => {
+    const airplaneCall = async () => {
+      let response = await axios.get(`http://localhost:3001/genres/${id}`)
+      setAirplanes(response.data.airplanes)
+    }
+    airplaneCall()
+
+
     let selectedGenre = props.genres.find((genre) => genre._id === id
     )  
     setSelectedGenre(selectedGenre)
 
-    const airplanesArray = props.airplanes.map((airplane) => {if (airplane.genre === id) airplaneHit = true})
-    return airplaneHit
   }, [props.genres, id])
 
-  console.log(airplaneHit)
-
-  // (<AirplaneList model={airplane.model}/>)
 
   return (
     <div className="airplane-card">
@@ -26,6 +29,8 @@ const AirplaneCard = (props) => {
         <h3>{genre.name}</h3>
       </div>
       <div className="img-wrapper">
+        {airplanes.map((airplane) => <h1>{airplane.model}</h1>)}
+        
       </div>
     </div>
   )

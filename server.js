@@ -28,11 +28,20 @@ app.get('/genres', async (req, res) => {
   res.json(allGenres)
 })
 
+//get one Genre--> GET
+app.get('/genres/:id', async (req, res) => {
+  let foundGenre = await Genre.findById(req.params.id).populate('airplanes')
+  res.json(foundGenre)
+})
+
 // create an airplane --> POST
 app.post('/airplanes', async (req, res) => {
-  let exampleGenreId = '6352e3a4ef2d7a275a9aa85a'
+  let exampleGenreId = '6356e5bc85b38ff43d759406'
   const requestBody = { ...req.body, genre: exampleGenreId }
   let createdAirplane = await Airplane.create(requestBody)
+  let foundGenre = await Genre.findById(exampleGenreId)
+  foundGenre.airplanes.push(createdAirplane._id)
+  foundGenre.save()
   res.json(createdAirplane)
 })
 
