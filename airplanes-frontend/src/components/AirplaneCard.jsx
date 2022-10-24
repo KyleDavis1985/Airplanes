@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import AirplaneList from './AirplaneList'
 import axios from 'axios'
+import Form from './Form'
 
 const AirplaneCard = (props) => {
   let { id } = useParams()
@@ -29,8 +29,8 @@ const AirplaneCard = (props) => {
         <h3>{genre.name}</h3>
       </div>
       <div className="img-wrapper">
-        {airplanes.map((airplane) => <h1>{airplane.model}</h1>)}
-        
+        {airplanes.map((airplane) => <div key={airplane.model}>{airplane.model}</div>)}
+        <Form />
       </div>
     </div>
   )
