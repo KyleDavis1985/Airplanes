@@ -1,27 +1,23 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { set } from 'mongoose'
 
 const AirplaneCard = (props) => {
   let { id } = useParams()
-  const [genre, setSelectedGenre] = useState(null)
+  const [genre, setSelectedGenre] = useState('')
 
   useEffect(() => {
-    let selectedGenre = props.genres.find(
-      (genre) => genre.id === parseInt(id)
+    let selectedGenre = props.genres.find((genre) => genre._id === id
     )  
 
     setSelectedGenre(selectedGenre)
 
-  }, [props.genre, id])
-
-  console.log(id)
+  }, [props.genres, id])
 
 
   return (
     <div className="airplane-card">
       <div className="info-wrapper flex-col">
-        <h3>test</h3>
+        <h3>{genre.name}</h3>
       </div>
       <div className="img-wrapper">
       </div>
