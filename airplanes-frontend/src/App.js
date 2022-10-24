@@ -9,7 +9,6 @@ import axios from 'axios'
 
 const App = () => {
   const [genres, updateGenres] = useState([])
-  const [selectedGenre, setSelectedGenre] = useState()
 
   useEffect(() => {
     const apiCall = async () => {
@@ -19,10 +18,6 @@ const App = () => {
     apiCall()
   }, [])
 
-  const handleClick = (e) => {
-    setSelectedGenre(e.target.value)
-  }
-
   return (
     <div>
       <header>
@@ -31,12 +26,8 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/about" element={<About />} />
-          <Route
-            path="/"
-            element={<Home genres={genres} handleClick={handleClick} />}
-            selectedGenre={selectedGenre}
-          />
-          <Route path="/genre:id" element={<AirplaneCard />} />
+          <Route path="/" element={<Home genres={genres} />} />
+          <Route path="/genre/:id" element={<AirplaneCard />} />
         </Routes>
       </main>
     </div>
