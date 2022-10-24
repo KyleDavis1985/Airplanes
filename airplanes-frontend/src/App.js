@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
 import About from './components/About'
@@ -9,6 +10,7 @@ import axios from 'axios'
 
 const App = () => {
   const [genres, updateGenres] = useState([])
+  let navigate = useNavigate()
 
   useEffect(() => {
     const apiCall = async () => {
@@ -18,6 +20,10 @@ const App = () => {
     apiCall()
   }, [])
 
+  const handleClick = (e) => {
+    navigate(`genre/${e.target.value}`)
+  }
+
   return (
     <div>
       <header>
@@ -26,8 +32,11 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/about" element={<About />} />
-          <Route path="/" element={<Home genres={genres} />} />
-          <Route path="/genre/:id" element={<AirplaneCard />} />
+          <Route
+            path="/"
+            element={<Home genres={genres} handleClick={handleClick} />}
+          />
+          <Route path="/genre/:id" element={<AirplaneCard genres={genres} />} />
         </Routes>
       </main>
     </div>

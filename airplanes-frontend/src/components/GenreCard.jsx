@@ -1,3 +1,5 @@
+import AirplaneCard from "./AirplaneCard"
+
 const GenreCard = (props) => {
 
   return (
@@ -8,7 +10,7 @@ const GenreCard = (props) => {
       <div className="img-wrapper">
         <img src={props.image} alt={props.name}></img>
       </div>
-      <button onClick={() => props.handleClick(props.genre)} value={props.id}>Test</button>
+      <button onClick={props.handleClick} value={props.id}>Test</button>
     </div>
   )
 }
