@@ -10,14 +10,21 @@ import axios from 'axios'
 
 const App = () => {
   const [genres, updateGenres] = useState([])
+  const [airplanes, selectedAirplanes] = useState([])
   let navigate = useNavigate()
 
   useEffect(() => {
-    const apiCall = async () => {
+    const genreCall = async () => {
       let response = await axios.get('http://localhost:3001/genres')
       updateGenres(response.data)
     }
-    apiCall()
+    genreCall()
+
+    const airplaneCall = async () => {
+      let response = await axios.get('http://localhost:3001/airplanes')
+      selectedAirplanes(response.data)
+    }
+    airplaneCall()
   }, [])
 
   const handleClick = (e) => {
@@ -36,7 +43,10 @@ const App = () => {
             path="/"
             element={<Home genres={genres} handleClick={handleClick} />}
           />
-          <Route path="/genre/:id" element={<AirplaneCard genres={genres} />} />
+          <Route
+            path="/genre/:id"
+            element={<AirplaneCard genres={genres} airplanes={airplanes} />}
+          />
         </Routes>
       </main>
     </div>
