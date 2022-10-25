@@ -36,10 +36,8 @@ app.get('/genres/:id', async (req, res) => {
 
 // create an airplane --> POST
 app.post('/airplanes', async (req, res) => {
-  console.log(req.body)
   let exampleGenreId = req.body.genre
   const requestBody = { ...req.body, genre: exampleGenreId }
-  console.log(requestBody)
   let createdAirplane = await Airplane.create(requestBody)
   let foundGenre = await Genre.findById(exampleGenreId)
   foundGenre.airplanes.push(createdAirplane._id)
@@ -55,7 +53,7 @@ app.get('/airplanes', async (req, res) => {
 
 //get one Airplane --> GET
 app.get('/airplanes/:id', async (req, res) => {
-  let foundAirplane = await Airplane.findById(req.params.id).populate('genre')
+  let foundAirplane = await Airplane.findById(req.params.id)
   res.json(foundAirplane)
 })
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
@@ -44,6 +44,7 @@ const Form= (props) => {
       range: '',
       dateDeployed: '',
     })
+
   }
 
   return (
@@ -66,7 +67,7 @@ const Form= (props) => {
         <input id="range" value={formState.range} onChange={handleChange} />
         <label htmlFor="dateDeployed">Date Deployed:</label>
         <input id="dateDeployed" value={formState.dateDeployed} onChange={handleChange} />
-        <button type="submit">Add Airplane</button>
+        <button type="submit" value={formState.id}>Add Airplane</button>
       </form>
     </div>
   )
