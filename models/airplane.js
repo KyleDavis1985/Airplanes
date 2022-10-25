@@ -6,7 +6,7 @@ const AirplaneSchema = new Schema(
     model: { type: String, required: true },
     top_speed: { type: String, required: true },
     unit_cost: { type: String, required: true },
-    image: { type: String, required: true },
+    image: { type: String },
     contractor: { type: String },
     stealth: { type: String },
     range: { type: String },

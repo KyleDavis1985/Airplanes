@@ -5,7 +5,7 @@ import './App.css'
 import Header from './components/Header'
 import About from './components/About'
 import Home from './components/Home'
-import AirplaneCard from './components/AirplaneCard'
+import AirplaneList from './components/AirplaneList'
 import axios from 'axios'
 
 const App = () => {
@@ -45,7 +45,7 @@ const App = () => {
           />
           <Route
             path="/genre/:id"
-            element={<AirplaneCard genres={genres} airplanes={airplanes} />}
+            element={<AirplaneList genres={genres} airplanes={airplanes} />}
           />
         </Routes>
       </main>

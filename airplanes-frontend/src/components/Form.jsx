@@ -1,13 +1,21 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useParams } from 'react-router-dom'
 
 const Form= (props) => {
-  const [products, updateProducts] = useState([])
+  let { id } = useParams()
+  const [airplanes, updateAirplanes] = useState([])
   const [formState, setFormState] = useState({
-    title: '',
-    description: '',
-    price: ''
+    model: '',
+    top_speed: '',
+    unit_speed: '',
+    image: '',
+    contractor: '',
+    stealth: '',
+    range: '',
+    date_deployed: ''
   })
+
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
   }
@@ -15,8 +23,8 @@ const Form= (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log(formState)
-    let newProduct = await axios
-      .post('http://localhost:3001/products/', formState)
+    let newAirplane = await axios
+      .post('http://localhost:3001/airplanes', formState)
       .then((response) => {
         return response
       })
@@ -25,9 +33,9 @@ const Form= (props) => {
       })
     updateProducts([...products, newProduct.data])
     setFormState({
-      title: '',
-      description: '',
-      price: ''
+      model: '',
+      top_speed: '',
+      unit_speed: ''
     })
   }
 
@@ -35,16 +43,24 @@ const Form= (props) => {
     <div>
       <h3>Create an Airplane</h3>
       <form onSubmit={handleSubmit}>
-      <label htmlFor="title">Title:</label>
-        <input id="title" value={formState.title} onChange={handleChange} />
-        <label htmlFor="description">Description:</label>
+      <label htmlFor="model">Model:</label>
+        <input id="model" value={formState.model} onChange={handleChange} />
+        <label htmlFor="topSpeed">Top Speed:</label>
         <input
-          id="description"
+          id="topSpeed"
           value={formState.description}
           onChange={handleChange}
         />
-        <label htmlFor="price">Price:</label>
+        <label htmlFor="image">Image:</label>
+        <input id="image" value={formState.image} onChange={handleChange} />
+        <label htmlFor="contractor">Contractor:</label>
+        <input id="contractor" value={formState.price} onChange={handleChange} />
+        <label htmlFor="stealth">Stealth (y/n):</label>
+        <input id="stealth" value={formState.price} onChange={handleChange} />
+        <label htmlFor="range">Range:</label>
         <input id="price" value={formState.price} onChange={handleChange} />
+        <label htmlFor="dateDeployed">Date Deployed:</label>
+        <input id="dateDeployed" value={formState.price} onChange={handleChange} />
         <button type="submit">Add Product</button>
       </form>
     </div>

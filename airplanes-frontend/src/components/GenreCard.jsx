@@ -1,4 +1,3 @@
-import AirplaneCard from "./AirplaneCard"
 
 const GenreCard = (props) => {
 
