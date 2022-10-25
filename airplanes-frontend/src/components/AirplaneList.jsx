@@ -10,6 +10,7 @@ const AirplaneList = (props) => {
   const [genre, setSelectedGenre] = useState('')
   const [airplanes, setAirplanes] = useState([])
 
+
   useEffect(() => {
     const airplaneCall = async () => {
       let response = await axios.get(`http://localhost:3001/genres/${id}`)

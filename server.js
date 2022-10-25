@@ -36,8 +36,10 @@ app.get('/genres/:id', async (req, res) => {
 
 // create an airplane --> POST
 app.post('/airplanes', async (req, res) => {
-  let exampleGenreId = '6356e5bc85b38ff43d759406'
+  console.log(req.body)
+  let exampleGenreId = req.body.genre
   const requestBody = { ...req.body, genre: exampleGenreId }
+  console.log(requestBody)
   let createdAirplane = await Airplane.create(requestBody)
   let foundGenre = await Genre.findById(exampleGenreId)
   foundGenre.airplanes.push(createdAirplane._id)
