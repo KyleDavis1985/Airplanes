@@ -25,12 +25,16 @@ const AirplaneList = (props) => {
 
   }, [id, props.genres])
 
+  
+
   return (
     <div className="airplane-list">
       <div className="airplane-card">
         {airplanes.map((airplane) => (<AirplaneCard key={airplane._id} model={airplane.model} id={airplane._id} topSpeed={airplane.top_speed} unitCost={airplane.unit_cost} image={airplane.image} contractor={props.contractor} stealth={airplane.stealth} range={airplane.range} dateDeployed={airplane.date_deployed} airplaneChange={airplanes} genreChange={genre}/>))}
       </div>
+      <div className='form-container'>
       <Form />
+      </div>
     </div>
   )
 }

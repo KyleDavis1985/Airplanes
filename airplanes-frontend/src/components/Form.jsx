@@ -18,8 +18,8 @@ const Form= (props) => {
   })
 
 
-  const handleChange = (event) => {
-    setFormState({ ...formState, [event.target.id]: event.target.value })
+  const handleChange = (e) => {
+    setFormState({ ...formState, [e.target.id]: e.target.value })
   }
 
   const handleSubmit = async (event) => {
@@ -44,7 +44,6 @@ const Form= (props) => {
       range: '',
       dateDeployed: '',
     })
-
   }
 
   return (
