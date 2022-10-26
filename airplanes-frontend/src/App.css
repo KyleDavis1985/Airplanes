@@ -38,8 +38,8 @@
 }
 
 img {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 300px;
+  max-height: 300px;
 }
 
 .container-grid {
@@ -81,4 +81,31 @@ img {
 
 .body {
   background-color: #708090;
+}
+
+.genre-card {
+  border: 3px solid black;
+  padding: 10px;
+  margin: 10px;
+  min-height: 320px;
+  background-color: #708090;
+  text-align: center;
+}
+
+.genre-button-wrapper {
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.genre-button {
+  font-size: 1.7ch;
+  font-weight: bold;
+  background-color: #282c34;
+  color: white;
+  border: 2px solid black;
+}
+
+.img-wrapper{
+  margin: 0;
 }

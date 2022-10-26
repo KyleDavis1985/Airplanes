@@ -32,7 +32,7 @@ const main = async () => {
     {
       name: 'Reconnaissance and surveillance',
       image:
-        'https://tinnhanhtv.com/wp-content/uploads/2021/07/sr-71-blackbird-photo-from-lockheed-martin-scaled.jpg',
+        'https://www.warhistoryonline.com/wp-content/uploads/sites/64/2019/03/blackbirdsr71_1.jpg',
       airplanes: []
     },
     {

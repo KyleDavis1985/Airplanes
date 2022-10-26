@@ -3,13 +3,12 @@ const GenreCard = (props) => {
 
   return (
     <div className="genre-card">
-      <div className="info-wrapper">
-        <h3>{props.name}</h3>
+      <div className="genre-button-wrapper">
+        <button className="genre-button" onClick={props.handleClick} value={props.id}>{props.name}</button>
       </div>
       <div className="img-wrapper">
         <img src={props.image} alt={props.name}></img>
       </div>
-      <button onClick={props.handleClick} value={props.id}>View {props.name}</button>
     </div>
   )
 }
