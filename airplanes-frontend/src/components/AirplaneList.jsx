@@ -9,6 +9,18 @@ const AirplaneList = (props) => {
   let { id } = useParams()
   const [genre, setSelectedGenre] = useState('')
   const [airplanes, setAirplanes] = useState([])
+  const [newAirplane, setAirplane] = useState([])
+  const [formState, setFormState] = useState({
+    model: '',
+    topSpeed: '',
+    unitCost: '',
+    image: '',
+    contractor: '',
+    stealth: '',
+    range: '',
+    dateDeployed: '',
+    genre: id
+  })
 
 
   useEffect(() => {
@@ -25,15 +37,60 @@ const AirplaneList = (props) => {
 
   }, [id, props.genres])
 
+  const handleChange = (e) => {
+    setFormState({ ...formState, [e.target.id]: e.target.value })
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    console.log(formState)
+    let builtAirplane = await axios
+      .post('http://localhost:3001/airplanes/', formState)
+      .then((response) => {
+        return response
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    setAirplane([...newAirplane, builtAirplane.data])
+    setFormState({
+      model: '',
+      topSpeed: '',
+      unitCost: '',
+      image: '',
+      contractor: '',
+      stealth: '',
+      range: '',
+      dateDeployed: '',
+    })
+  }
+
+  const deleteItem = async (e) => { 
+    await axios.delete(`http://localhost:3001/airplanes/${e.target.value}`);
+  }
+  
+  
+  const updateItem = async (e) => {
+    await axios.put(`http://localhost:3001/airplanes/${e.target.value}`, {
+      model: '',
+      topSpeed: '',
+      image: '',
+      unitCost: '',
+      contract: '',
+      stealth: '', 
+      range: '',
+      dateDeployed: '' 
+    })
+    }
   
 
   return (
     <div className="airplane-list">
       <div className="airplane-card">
-        {airplanes.map((airplane) => (<AirplaneCard key={airplane._id} model={airplane.model} id={airplane._id} topSpeed={airplane.top_speed} unitCost={airplane.unit_cost} image={airplane.image} contractor={props.contractor} stealth={airplane.stealth} range={airplane.range} dateDeployed={airplane.date_deployed} airplaneChange={airplanes} genreChange={genre}/>))}
+        {airplanes.map((airplane) => (<AirplaneCard key={airplane._id} model={airplane.model} id={airplane._id} topSpeed={airplane.top_speed} unitCost={airplane.unit_cost} image={airplane.image} contractor={props.contractor} stealth={airplane.stealth} range={airplane.range} dateDeployed={airplane.date_deployed} airplaneChange={airplanes} genreChange={genre} delete={deleteItem}/>))}
       </div>
       <div className='form-container'>
-      <Form />
+      <Form handleChange={handleChange} handleSubmit={handleSubmit} model={formState.model} topSpeed={formState.topSpeed} image={formState.image} unitCost={formState.unitCost} contractor={formState.contractor} stealth={formState.stealth} range={formState.range} dateDeployed={formState.dateDeployed}/>
       </div>
     </div>
   )
