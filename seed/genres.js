@@ -42,6 +42,17 @@ const main = async () => {
       airplanes: []
     },
     {
+      name: 'Cargo',
+      image:
+        'https://aeronavdata.com/wp-content/uploads/2013/03/C-17-032-Globemaster-032-III-032-Over-032-Alaska-1920x1080.jpg',
+      airplanes: []
+    },
+    {
+      name: 'Passenger',
+      image: 'https://www.therichest.com/wp-content/uploads/1053.jpg',
+      airplanes: []
+    },
+    {
       name: 'Area 51',
       image:
         'https://stormarea51basecamp.com/wp-content/uploads/2020/12/UFO-in-the-dark-sky-1024x576.jpg',
