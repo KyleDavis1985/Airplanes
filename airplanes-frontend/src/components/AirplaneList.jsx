@@ -10,11 +10,12 @@ const AirplaneList = (props) => {
   const [genre, setSelectedGenre] = useState('')
   const [airplanes, setAirplanes] = useState([])
   const [newAirplane, setAirplane] = useState([])
+  const [count, setCount] = useState(0)
   const [formState, setFormState] = useState({
     model: '',
     topSpeed: '',
-    unitCost: '',
     image: '',
+    unitCost: '',
     contractor: '',
     stealth: '',
     range: '',
@@ -30,12 +31,11 @@ const AirplaneList = (props) => {
     }
     airplaneCall()
 
-
     let selectedGenre = props.genres.find((genre) => genre._id === id
     )  
     setSelectedGenre(selectedGenre)
 
-  }, [id, props.genres])
+  }, [id, props.genres, count])
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.id]: e.target.value })
@@ -52,21 +52,24 @@ const AirplaneList = (props) => {
       .catch((error) => {
         console.log(error)
       })
+    setCount(count + 1)
     setAirplane([...newAirplane, builtAirplane.data])
     setFormState({
       model: '',
       topSpeed: '',
-      unitCost: '',
       image: '',
+      unitCost: '',
       contractor: '',
       stealth: '',
       range: '',
       dateDeployed: '',
+      genre: id
     })
   }
 
   const deleteItem = async (e) => { 
     await axios.delete(`http://localhost:3001/airplanes/${e.target.value}`);
+    setCount(count + 1)
   }
   
   
@@ -80,6 +83,7 @@ const AirplaneList = (props) => {
       .catch((error) => {
         console.log(error)
       })
+      setCount(count + 1)
     }
   
 
