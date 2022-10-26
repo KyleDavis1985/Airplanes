@@ -10,7 +10,7 @@ const AirplaneCard = (props) => {
         toggleClicked(false)
       }
     }
-    console.log(clicked)
+ 
   }
 
   if (clicked === false){

@@ -32,11 +32,11 @@ const App = () => {
   }
 
   return (
-    <div>
-      <header>
+    <div className="body">
+      <header className="header">
         <Header />
       </header>
-      <main>
+      <main className="main">
         <Routes>
           <Route path="/about" element={<About />} />
           <Route

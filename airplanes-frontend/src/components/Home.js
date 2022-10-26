@@ -3,7 +3,7 @@ import GenreCard from './GenreCard'
 const Home = (props) => {
   return (
     <div className="genres">
-      <h2>Airplane Types</h2>
+      <h2>Aircraft Types</h2>
       <div className="container-grid">
         {props.genres.map((genre) => (
           <GenreCard

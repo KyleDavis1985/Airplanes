@@ -21,7 +21,7 @@ const Form= (props) => {
         <input id="topSpeed" value={props.topSpeed} onChange={props.handleChange}/>
         <label htmlFor="image">Image:</label>
         <input id="image" value={props.image} onChange={props.handleChange}/>
-        <label htmlFor="unitCost">Unit Cost:</label>
+        <label htmlFor="unitCost">Price Per Unit:</label>
         <input id="unitCost" value={props.unitCost} onChange={props.handleChange} />
         <label htmlFor="contractor">Contractor:</label>
         <input id="contractor" value={props.contractor} onChange={props.handleChange} />

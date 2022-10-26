@@ -53,3 +53,32 @@ img {
 .genres {
   text-align: center;
 }
+
+.header {
+  text-align: right;
+  padding: 10px;
+  font-size: 2ch;
+}
+
+.link-home {
+  padding: 5px;
+  color: #3cb371 
+}
+
+.link-about {
+  padding: 5px;
+  color: #3cb371 
+}
+
+.main {
+  background-color: #696969;
+  border-top: 3px solid black;
+}
+
+.header {
+  background-color: #708090;
+}
+
+.body {
+  background-color: #708090;
+}
