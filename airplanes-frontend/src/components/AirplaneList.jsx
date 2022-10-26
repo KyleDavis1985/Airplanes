@@ -23,20 +23,6 @@ const AirplaneList = (props) => {
     genre: id
   })
 
-
-  useEffect(() => {
-    const airplaneCall = async () => {
-      let response = await axios.get(`http://localhost:3001/genres/${id}`)
-      setAirplanes(response.data.airplanes)
-    }
-    airplaneCall()
-
-    let selectedGenre = props.genres.find((genre) => genre._id === id
-    )  
-    setSelectedGenre(selectedGenre)
-
-  }, [id, props.genres, count])
-
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.id]: e.target.value })
   }
@@ -86,11 +72,23 @@ const AirplaneList = (props) => {
       setCount(count + 1)
     }
   
+  useEffect(() => {
+    const airplaneCall = async () => {
+      let response = await axios.get(`http://localhost:3001/genres/${id}`)
+      setAirplanes(response.data.airplanes)
+    }
+    airplaneCall()
+
+    let selectedGenre = props.genres.find((genre) => genre._id === id
+    )  
+    setSelectedGenre(selectedGenre)
+
+  }, [id, props.genres, count])
 
   return (
     <div className="airplane-list">
       <div className="airplane-card">
-        {airplanes.map((airplane) => (<AirplaneCard key={airplane._id} model={airplane.model} id={airplane._id} topSpeed={airplane.top_speed} unitCost={airplane.unit_cost} image={airplane.image} contractor={props.contractor} stealth={airplane.stealth} range={airplane.range} dateDeployed={airplane.date_deployed} airplaneChange={airplanes} genreChange={genre} delete={deleteItem} update={updateItem}/>))}
+        {airplanes.map((airplane) => (<AirplaneCard key={airplane._id} model={airplane.model} id={airplane._id} topSpeed={airplane.topSpeed} unitCost={airplane.unitCost} image={airplane.image} contractor={airplane.contractor} stealth={airplane.stealth} range={airplane.range} dateDeployed={airplane.dateDeployed} airplaneChange={airplanes} genreChange={genre} delete={deleteItem} update={updateItem}/>))}
       </div>
       <div className='form-container'>
       <Form handleChange={handleChange} handleSubmit={handleSubmit} model={formState.model} topSpeed={formState.topSpeed} image={formState.image} unitCost={formState.unitCost} contractor={formState.contractor} stealth={formState.stealth} range={formState.range} dateDeployed={formState.dateDeployed}/>

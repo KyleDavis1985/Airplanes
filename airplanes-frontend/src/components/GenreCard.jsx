@@ -3,7 +3,7 @@ const GenreCard = (props) => {
 
   return (
     <div className="genre-card">
-      <div className="info-wrapper flex-col">
+      <div className="info-wrapper">
         <h3>{props.name}</h3>
       </div>
       <div className="img-wrapper">

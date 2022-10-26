@@ -12,9 +12,9 @@ const Form= (props) => {
   }
 
   return (
-    <div>
+    <div className='form-box'>
       <h3>Create or Update an Airplane</h3>
-      <form onSubmit={props.handleSubmit}>
+      <form className='form' onSubmit={props.handleSubmit}>
       <label htmlFor="model">Model:</label>
         <input id="model" value={props.model} onChange={props.handleChange} />
         <label htmlFor="top_speed">Top Speed:</label>
