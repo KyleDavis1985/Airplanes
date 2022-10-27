@@ -4,8 +4,8 @@ const GenreSchema = require('./genre')
 const AirplaneSchema = new Schema(
   {
     model: { type: String, required: true },
-    topSpeed: { type: String, required: true },
-    unitCost: { type: String, required: true },
+    topSpeed: { type: String },
+    unitCost: { type: String },
     image: { type: String },
     contractor: { type: String },
     stealth: { type: String },

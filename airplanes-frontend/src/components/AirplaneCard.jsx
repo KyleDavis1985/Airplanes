@@ -18,12 +18,12 @@ const AirplaneCard = (props) => {
     <div className="airplane-preview">
       <div className='clicker'onClick={handleClick}>
       <h1>{props.model}</h1>
-      <div className="img-wrapper">
+      <div className="airplane-card-img-wrapper">
         <img src={props.image} alt={props.name}></img>
       </div>
       </div>
-      <button type="delete" value={props.id} onClick={props.delete}>Delete Airplane</button>
-      <button type="update" value={props.id} onClick={props.update}>Update Airplane</button>
+      <button className="deleteButton" type="delete" value={props.id} onClick={props.delete}>Delete Airplane</button>
+      <button className="updateButton" type="update" value={props.id} onClick={props.update}>Update Airplane</button>
     </div>
   )
 } else {
