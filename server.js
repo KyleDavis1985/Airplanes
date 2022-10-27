@@ -9,7 +9,7 @@ const app = express()
 //middleware
 app.use(express.json())
 app.use(cors())
-
+app.use(express.static(`${__dirname}/airplanes-frontend/build`))
 app.get('/', (req, res) => {
   res.send({ msg: 'This route is being hit' })
 })
@@ -91,6 +91,10 @@ app.delete('/airplanes/', async (req, res) => {
 app.delete('/genres/:id', async (req, res) => {
   let deletedGenre = await Genre.findByIdAndDelete(req.params.id)
   res.json(deletedGenre)
+})
+
+app.get('/*', (req, res) => {
+  res.sendFile(`${__dirname}/airplanes-frontend/build/index.html`)
 })
 
 app.listen(PORT, () => {
