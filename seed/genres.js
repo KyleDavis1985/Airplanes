@@ -24,7 +24,7 @@ const main = async () => {
       airplanes: []
     },
     {
-      name: 'Unmanned Combat Aerial Vehicle (UAV)',
+      name: 'UAV',
       image:
         'https://imagesvc.timeincapp.com/v3/foundry/image/?q=60&url=https:%2F%2Fs3.amazonaws.com%2Fthe-drive-staging%2Fmessage-editor%252F1516989499539-mq-9-er.jpg',
       airplanes: []
