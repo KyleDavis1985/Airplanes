@@ -110,6 +110,7 @@ img {
 
 .genre-button-wrapper {
   grid-template-rows: 1;
+  margin-top: 50px;
 }
 
 .genre-button {
