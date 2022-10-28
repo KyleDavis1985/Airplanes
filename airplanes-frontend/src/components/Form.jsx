@@ -13,7 +13,7 @@ const Form= (props) => {
 
   return (
     <div className='form-box'>
-      <h3>Create or Update an Airplane</h3>
+      <h3>Create an Airplane</h3>
       <form className='form' onSubmit={props.handleSubmit}>
       <label htmlFor="model">Aircraft Model:</label>
         <input placeholder="Required" className="form-input" id="model" value={props.model} onChange={props.handleChange} />
@@ -37,6 +37,8 @@ const Form= (props) => {
       </form>
     </div>
   )
-}
+} 
+
+
 
 export default Form

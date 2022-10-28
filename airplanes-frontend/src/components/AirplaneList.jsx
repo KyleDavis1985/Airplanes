@@ -102,7 +102,7 @@ const AirplaneList = (props) => {
         {airplanes.map((airplane) => (<AirplaneCard key={airplane._id} model={airplane.model} id={airplane._id} topSpeed={airplane.topSpeed} unitCost={airplane.unitCost} image={airplane.image} contractor={airplane.contractor} stealth={airplane.stealth} range={airplane.range} dateDeployed={airplane.dateDeployed} airplaneChange={airplanes} genreChange={genre} delete={deleteItem} update={updateItem}/>))}
       </div>
       <div className='form-container'>
-      <Form handleChange={handleChange} handleSubmit={handleSubmit} model={formState.model} topSpeed={formState.topSpeed} image={formState.image} unitCost={formState.unitCost} contractor={formState.contractor} stealth={formState.stealth} range={formState.range} dateDeployed={formState.dateDeployed}/>
+      <Form handleChange={handleChange} handleSubmit={handleSubmit} update={updateItem} model={formState.model} topSpeed={formState.topSpeed} image={formState.image} unitCost={formState.unitCost} contractor={formState.contractor} stealth={formState.stealth} range={formState.range} dateDeployed={formState.dateDeployed}/>
       </div>
     </div>
   )

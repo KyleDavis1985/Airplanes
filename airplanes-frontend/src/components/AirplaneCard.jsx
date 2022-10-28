@@ -31,6 +31,7 @@ const AirplaneCard = (props) => {
   )
 } else {
   return (
+    <div className='airplane-preview'>
     <div className="airplane-details" onClick={handleClick}>
     <div className='airplane-details-title'>
     <h1>{props.model}</h1>
@@ -42,6 +43,10 @@ const AirplaneCard = (props) => {
     <h4>Flight Range: {props.range}</h4>
     <h4>First Flight: {props.dateDeployed}</h4>
   </div>
+    <button className="deleteButton" type="delete" value={props.id} onClick={props.delete}>Delete Airplane</button>
+    <button className="updateButton" type="update" value={props.id} onClick={props.update}>Update Airplane</button>
+  </div>
+  
 )
 }
 }
