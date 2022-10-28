@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 const AirplaneCard = (props) => {
   const [clicked, toggleClicked] = useState(false)
 
@@ -10,7 +11,6 @@ const AirplaneCard = (props) => {
         toggleClicked(false)
       }
     }
- 
   }
 
   if (clicked === false){
@@ -35,11 +35,12 @@ const AirplaneCard = (props) => {
     <div className='airplane-details-title'>
     <h1>{props.model}</h1>
     </div>
-    <h4>Stealth: {props.stealth}</h4>
     <h4>Top Speed: {props.topSpeed}</h4>
-    <h4>Cost per Airplane: {props.unitCost}</h4>
+    <h4>Price per Airplane: {props.unitCost}</h4>
     <h4>Contractor: {props.contractor}</h4>
-    <h4>Inauguration Date: {props.dateDeployed}</h4>
+    <h4>Stealth: {props.stealth}</h4>
+    <h4>Flight Range: {props.range}</h4>
+    <h4>First Flight: {props.dateDeployed}</h4>
   </div>
 )
 }

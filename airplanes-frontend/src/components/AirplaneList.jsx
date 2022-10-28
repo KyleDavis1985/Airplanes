@@ -69,6 +69,17 @@ const AirplaneList = (props) => {
       .catch((error) => {
         console.log(error)
       })
+      setFormState({
+        model: '',
+        topSpeed: '',
+        image: '',
+        unitCost: '',
+        contractor: '',
+        stealth: '',
+        range: '',
+        dateDeployed: '',
+        genre: id
+      })
       setCount(count + 1)
     }
   
