@@ -58,7 +58,7 @@ img {
 }
 
 .header {
-  text-align: center;
+  text-align: right;
   padding: 10px;
   font-size: 2ch;
 }
@@ -258,5 +258,10 @@ img {
 
 .detail {
   margin-bottom: 10px;
+}
+
+.about {
+  text-align: center;
+  margin: 100px 100px 0 100px;
 }
 
