@@ -97,6 +97,8 @@ const AirplaneList = (props) => {
   }, [id, props.genres, count])
 
   return (
+    <div className='note'>
+      <h4>To UPDATE an airplane. Fill out details on this form then click the *Update Airplane* button next to the airplane you wish to update.</h4>
     <div className="airplane-list">
       <div className="airplane-card">
         {airplanes.map((airplane) => (<AirplaneCard key={airplane._id} model={airplane.model} id={airplane._id} topSpeed={airplane.topSpeed} unitCost={airplane.unitCost} image={airplane.image} contractor={airplane.contractor} stealth={airplane.stealth} range={airplane.range} dateDeployed={airplane.dateDeployed} airplaneChange={airplanes} genreChange={genre} delete={deleteItem} update={updateItem}/>))}
@@ -104,6 +106,7 @@ const AirplaneList = (props) => {
       <div className='form-container'>
       <Form handleChange={handleChange} handleSubmit={handleSubmit} update={updateItem} model={formState.model} topSpeed={formState.topSpeed} image={formState.image} unitCost={formState.unitCost} contractor={formState.contractor} stealth={formState.stealth} range={formState.range} dateDeployed={formState.dateDeployed}/>
       </div>
+    </div>
     </div>
   )
 }

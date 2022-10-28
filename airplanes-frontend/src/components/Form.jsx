@@ -35,9 +35,6 @@ const Form= (props) => {
         <button className="form-btn" type="submit" onClick={counter} value={props.id}>Create Airplane</button>
         </div>
       </form>
-      <div className="note">
-          <h5>To UPDATE an airplane. Fill out details on this form then click the *Update Airplane* button next to the airplane you wish to update.</h5>
-        </div>
     </div>
   )
 } 
