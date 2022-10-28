@@ -31,24 +31,21 @@ const AirplaneCard = (props) => {
   )
 } else {
   return (
-    <div className='airplane-preview'>
-    <div className="airplane-details" onClick={handleClick}>
-    <div className='airplane-details-title'>
-    <h1>{props.model}</h1>
+    <div className="airplane-preview">
+    <div className='details-clicker'onClick={handleClick}>
+      <h4 className="detail">Top Speed: {props.topSpeed}</h4>
+      <h4 className="detail">Price per Airplane: {props.unitCost}</h4>
+      <h4 className="detail">Contractor: {props.contractor}</h4>
+      <h4 className="detail">Stealth: {props.stealth}</h4>
+      <h4 className="detail">Flight Range: {props.range}</h4>
+      <h4 className="detail">First Flight: {props.dateDeployed}</h4>  
+      <h4 className="detail">Image Link: <a className="link" href={props.image}>Link</a></h4>   
     </div>
-    <h4>Top Speed: {props.topSpeed}</h4>
-    <h4>Price per Airplane: {props.unitCost}</h4>
-    <h4>Contractor: {props.contractor}</h4>
-    <h4>Stealth: {props.stealth}</h4>
-    <h4>Flight Range: {props.range}</h4>
-    <h4>First Flight: {props.dateDeployed}</h4>
+      <button className="deleteButton" type="delete" value={props.id} onClick={props.delete}>Delete Airplane</button>
+      <button className="updateButton" type="update" value={props.id} onClick={props.update}>Update Airplane</button>
   </div>
-    <button className="deleteButton" type="delete" value={props.id} onClick={props.delete}>Delete Airplane</button>
-    <button className="updateButton" type="update" value={props.id} onClick={props.update}>Update Airplane</button>
-  </div>
-  
-)
-}
+    ) 
+  }
 }
 
 

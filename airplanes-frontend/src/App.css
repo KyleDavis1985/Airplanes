@@ -87,12 +87,12 @@ img {
 }
 
 .header {
-  background-color: grey;
+  background-color: #333333;
 }
 
-.body {
+/* .body {
   background-color: #242333;
-}
+} */
 
 .genre-card {
   display: grid;
@@ -103,9 +103,8 @@ img {
   margin: 10px;
   min-height: 100%;
   min-width: 100%;
-  background-color: #333333;
   text-align: center;
-  box-shadow: 2px 2px 3px 1px #708090;
+  box-shadow: 0 0 3px 2px #242333;
 }
 
 .genre-button-wrapper {
@@ -137,6 +136,7 @@ img {
   display: grid;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .form-btn-wrapper {
@@ -157,6 +157,10 @@ img {
   width: 300px;
   height: 25px;
   margin: 5px 0 5px 0
+}
+
+.note {
+  padding: 0 25px 0 25px;
 }
 
 .airplane-card {
@@ -205,7 +209,7 @@ img {
   margin-top: 75px;
   font-size: 1.4ch;
   font-weight: bold;
-  background-color: #01B0D3;
+  background-color: red;
   color: #FFFFFF;
   box-shadow: 0 0 2px 1px #FFFFFF;
   text-shadow: 1px 1px 2px black, 0 0 25px #242333, 0 0 5px #01B0D3;
@@ -214,24 +218,26 @@ img {
 .clicker {
   box-shadow: 0 0 3px 2px #242333;
   padding: 0 15px 0 15px; 
+  height: 360px;
+  width: 300px;
+}
+
+.details-clicker {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  box-shadow: 0 0 3px 2px #01B0D3;
+  padding: 0 15px 0 15px; 
+  background-color: #333333;
+  height: 360px;
+  width: 300px;
+  color: #FFFFFF
 }
 
 .form-container {
   grid-column: 2;
   justify-self: center;
-}
-
-.airplane-details {
-  text-align: center;
-  box-shadow: 0 0 3px 2px #242333;
-  padding: 0 15px 0 15px; 
-  min-width: 300px;
-  min-height: 347px;
-  align-self: center;
-  margin-right: 127px;
-  background-color: #242333;
-  color: #FFFFFF;
-  opacity: 75%;
 }
 
 .airplane-card-title {
@@ -244,5 +250,13 @@ img {
   border-bottom: 3px solid #FFFFFF;
   color: #FFFFFF;
   text-shadow: 1px 1px 2px black, 0 0 25px #242333, 0 0 5px #01B0D3;
+}
+
+.link {
+  color: #01B0D3;
+}
+
+.detail {
+  margin-bottom: 10px;
 }
 

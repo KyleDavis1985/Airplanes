@@ -20,7 +20,7 @@ const main = async () => {
     {
       name: 'Attack',
       image:
-        'http://www.aiirsource.com/wp/wp-content/uploads/2016/06/a-10-ground-attack-aircraft-in-a-1280x768.jpg',
+        'https://wallpapertag.com/wallpaper/middle/3/2/5/539788-a10-warthog-wallpaper-1920x1080-hd.jpg',
       airplanes: []
     },
     {

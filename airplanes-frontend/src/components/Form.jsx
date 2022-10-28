@@ -13,7 +13,7 @@ const Form= (props) => {
 
   return (
     <div className='form-box'>
-      <h3>Create an Airplane</h3>
+      <h3>Create or Update an Airplane</h3>
       <form className='form' onSubmit={props.handleSubmit}>
       <label htmlFor="model">Aircraft Model:</label>
         <input placeholder="Required" className="form-input" id="model" value={props.model} onChange={props.handleChange} />
@@ -35,6 +35,9 @@ const Form= (props) => {
         <button className="form-btn" type="submit" onClick={counter} value={props.id}>Create Airplane</button>
         </div>
       </form>
+      <div className="note">
+          <h5>To UPDATE an airplane. Fill out details on this form then click the *Update Airplane* button next to the airplane you wish to update.</h5>
+        </div>
     </div>
   )
 } 
